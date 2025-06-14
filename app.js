@@ -8,7 +8,10 @@ const swaggerSpec = require("./swagger");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+var authorize = require("./middleware/authorize.middleware");
+var authenticate = require("./middleware/authenticate.middleware");
 
+var secureRoute = require('./routes/secure.route');  // pour le module middleware
 var vehicleRoute = require("./routes/vehicule.route");
 var userRoute = require("./routes/user.route");
 var sequelize = require("./config/db");
@@ -53,6 +56,25 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/vehicles", vehicleRoute);
 app.use("/users", userRoute);
+app.use('/', secureRoute);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+
+// Routes spéciales pour les tests d'intégration middleware
+app.get('/secure', authenticate, (req, res) => {
+  res.status(200).json({ message: 'Authenticated' });
+});
+
+app.get('/admin', authenticate, authorize(['admin']), (req, res) => {
+  res.status(200).json({ message: 'Admin access' });
+});
+
+app.get('/whoami', authenticate, (req, res) => {
+  res.status(200).json({ user: req.user });
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
@@ -73,10 +95,10 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
+/*
 const PORT = process.env.PORT || 3001;
-app.listen( () => {
+app.listen( () => {                                      ## isole pour le test d'integration du module middleware
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
+*/
 module.exports = app;

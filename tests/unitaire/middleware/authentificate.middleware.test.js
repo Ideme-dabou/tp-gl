@@ -1,4 +1,4 @@
-const authenticate = require('../../middleware/authenticate.middleware');
+const authenticate = require('../../../middleware/authenticate.middleware');
  
 const jwt = require('jsonwebtoken');
 

@@ -1,10 +1,10 @@
-const searchByPrice = require('../../controller/vehicle/searchByPrice');
-const Vehicle = require('../../models/vehicle.model');
-const ValidNumber = require('../../utils/ValidNumber');
+const searchByPrice = require('../../../controller/vehicle/searchByPrice');
+const Vehicle = require('../../../models/vehicle.model');
+const ValidNumber = require('../../../utils/ValidNumber');
 const { Op } = require('sequelize');
 
-jest.mock('../../models/vehicle.model');
-jest.mock('../../utils/ValidNumber');
+jest.mock('../../../models/vehicle.model');
+jest.mock('../../../utils/ValidNumber');
 
 describe('searchByPrice', () => {
   let req, res;

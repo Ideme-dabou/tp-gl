@@ -1,10 +1,10 @@
-const loginUser = require('../../controller/user/loginUser');
-const User = require('../../models/user.model');
+const loginUser = require('../../../controller/user/loginUser');
+const User = require('../../../models/user.model');
 const bcrypt = require('bcrypt');
 const ms = require('ms');
 
 // Mock des dépendances
-jest.mock('../../models/user.model');
+jest.mock('../../../models/user.model');
 jest.mock('bcrypt');
 jest.mock('ms');
 

@@ -1,7 +1,7 @@
-const { updateUserName, updateUserRole } = require('../../controller/user/updateUser');
-const User = require('../../models/user.model');
+const { updateUserName, updateUserRole } = require('../../../controller/user/updateUser');
+const User = require('../../../models/user.model');
 
-jest.mock('../../models/user.model');
+jest.mock('../../../models/user.model');
 
 describe('User Update Functions', () => {
   let req, res, mockUser;

@@ -1,7 +1,7 @@
-const updateVehiculeById = require("../../controller/vehicle/updateVehiculeById");
-const Vehicle = require("../../models/vehicle.model");
+const updateVehiculeById = require("../../../controller/vehicle/updateVehiculeById");
+const Vehicle = require("../../../models/vehicle.model");
 
-jest.mock("../../models/vehicle.model");
+jest.mock("../../../models/vehicle.model");
 
 describe("updateVehiculeById", () => {
   let req, res;

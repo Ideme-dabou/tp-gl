@@ -1,7 +1,7 @@
-const createVehicule = require("../../controller/vehicle/createVehicule");
-const Vehicle = require("../../models/vehicle.model");
+const createVehicule = require("../../../controller/vehicle/createVehicule");
+const Vehicle = require("../../../models/vehicle.model");
 
-jest.mock("../../models/vehicle.model"); // Mock du modèle
+jest.mock("../../../models/vehicle.model"); // Mock du modèle
 
 describe("createVehicule", () => {
   it("devrait créer un véhicule et retourner un statut 201", async () => {

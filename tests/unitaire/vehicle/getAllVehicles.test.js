@@ -1,8 +1,8 @@
 // tests/getAllVehicles.test.js
-const getAllVehicles = require("../../controller/vehicle/getAllVehicles");
-const Vehicle = require("../../models/vehicle.model");
+const getAllVehicles = require("../../../controller/vehicle/getAllVehicles");
+const Vehicle = require("../../../models/vehicle.model");
 
-jest.mock("../../models/vehicle.model"); // On mock le modèle Sequelize
+jest.mock("../../../models/vehicle.model"); // On mock le modèle Sequelize
 
 describe("getAllVehicles", () => {
   let req, res;

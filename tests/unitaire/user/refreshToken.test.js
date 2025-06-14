@@ -1,9 +1,9 @@
-const refreshExpiredToken = require('../../controller/user/refreshExpiretedToken');
-const User = require('../../models/user.model');
+const refreshExpiredToken = require('../../../controller/user/refreshExpiretedToken');
+const User = require('../../../models/user.model');
 const jwt = require('jsonwebtoken');
 
 
-jest.mock('../../models/user.model');
+jest.mock('../../../models/user.model');
 jest.mock('jsonwebtoken');
 
 describe('refreshExpiredToken Function', () => {

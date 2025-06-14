@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": "jest"
+    "test": "jest",
+    "test:unitaire": "jest tests/unitaire",
+    "test:integration": "cross-env NODE_ENV=test jest tests/integration"
   },
   "dependencies": {
     "@sequelize/sqlite3": "^7.0.0-alpha.46",
@@ -32,6 +34,6 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.10"
   }
 }

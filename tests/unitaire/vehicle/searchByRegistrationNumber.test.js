@@ -1,9 +1,9 @@
-const searchByRegistrationNumber = require("../../controller/vehicle/searchByResgistrationNumber");
-const vehicle = require("../../models/vehicle.model");
-const ValuidNumber = require("../../utils/ValidNumber");
+const searchByRegistrationNumber = require("../../../controller/vehicle/searchByResgistrationNumber");
+const vehicle = require("../../../models/vehicle.model");
+const ValuidNumber = require("../../../utils/ValidNumber");
 
-jest.mock("../../models/vehicle.model");
-jest.mock("../../utils/ValidNumber");
+jest.mock("../../../models/vehicle.model");
+jest.mock("../../../utils/ValidNumber");
 
 describe("searchByRegistrationNumber", () => {
   let req, res;

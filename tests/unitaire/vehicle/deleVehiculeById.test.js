@@ -1,7 +1,7 @@
-const deleVehiculeById = require("../../controller/vehicle/deleteVehiculeById");
-const Vehicle = require("../../models/vehicle.model");
+const deleVehiculeById = require("../../../controller/vehicle/deleteVehiculeById");
+const Vehicle = require("../../../models/vehicle.model");
 
-jest.mock("../../models/vehicle.model"); // on simule le modèle Vehicle
+jest.mock("../../../models/vehicle.model"); // on simule le modèle Vehicle
 
 describe("deleVehiculeById", () => {
 

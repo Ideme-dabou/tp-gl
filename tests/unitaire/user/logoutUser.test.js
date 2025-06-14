@@ -1,8 +1,8 @@
-const logoutUser = require('../../controller/user/logoutUser');
-const User = require('../../models/user.model');
+const logoutUser = require('../../../controller/user/logoutUser');
+const User = require('../../../models/user.model');
 
 // Mock des dépendances
-jest.mock('../../models/user.model');
+jest.mock('../../../models/user.model');
 
 describe('logoutUser Function', () => {
   let req, res, consoleErrorSpy;

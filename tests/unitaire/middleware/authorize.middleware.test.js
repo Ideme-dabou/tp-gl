@@ -1,4 +1,4 @@
-const authorize = require('../../middleware/authorize.middleware');
+const authorize = require('../../../middleware/authorize.middleware');
 
 describe('🧪 CT-UM-04 – Accès refusé si rôle non autorisé (authorize)', () => {
   it('renvoie 403 si le rôle utilisateur n’est pas autorisé', () => {
